@@ -42,8 +42,8 @@ function firstXWords(list, end){
 }
 
 /**
- * 
- * @param {Array} list - list 
+ * Logs a set of words from start to finish
+ * @param {Array} list - Array of all words
  * @param {Number} start - Index to start from
  * @param {Number} finish - Index to end at.
  */
@@ -52,7 +52,14 @@ function subsetOfWords(list, start, finish){
         console.log(list[i])
     }
 }
-function sortWords(list){}
+/**
+ * Logs all the words, sorted alphabetically.
+ * @param {Array} list - Array of all input words
+ */
+function sortWords(list){
+    sortedList = list.sort()
+    allWords(sortedList)
+}
 function wordsWithQ(list){}
 function findWordsWithLetter(list, letter){}
 
@@ -61,6 +68,7 @@ function findWordsWithLetter(list, letter){}
 // nextTenWords(words)
 // firstXWords(words, 1)
 // subsetOfWords(words, 12, 14)
+sortWords(words)
 
 
 
