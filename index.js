@@ -36,16 +36,22 @@ function nextTenWords(list) {
  * @param {Number} end - The console will log up to this index.
  */
 function firstXWords(list, end){
-    for (i = 0; i <= end; i++) {
+    for (let i = 0; i <= end; i++) {
         console.log(list[i])
     }
 }
 
 /**
  * 
- * @param {*} list 
+ * @param {Array} list - list 
+ * @param {Number} start - Index to start from
+ * @param {Number} finish - Index to end at.
  */
-function subsetOfWords(list){}
+function subsetOfWords(list, start, finish){
+    for(let i = start; i < finish; i++){
+        console.log(list[i])
+    }
+}
 function sortWords(list){}
 function wordsWithQ(list){}
 function findWordsWithLetter(list, letter){}
@@ -54,6 +60,7 @@ function findWordsWithLetter(list, letter){}
 // firstTenWords(words)
 // nextTenWords(words)
 // firstXWords(words, 1)
+// subsetOfWords(words, 12, 14)
 
 
 
