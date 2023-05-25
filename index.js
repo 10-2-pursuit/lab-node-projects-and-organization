@@ -67,16 +67,44 @@ function sortWords(list){
 function wordsWithQ(list){
     findWordsWithLetter(list, "q")
 }
-/**
+
+/** Logs all words starting with the given letter
  * 
- * @param {Array} list 
+ * @param {Array} list - List of input words
  * @param {"string"} letter 
  */
 function findWordsWithLetter(list, letter){
     let filteredList = list
     .filter(word => word.slice(0,letter.length) == letter)
-    allWords(filteredList)
+    if(filteredList.length != 0){
+        allWords(filteredList)
+    } else {
+        console.log(`No words matching ${letter}`)
+    } 
+    
 }
+
+function lettersMatch(list, input){
+    if(input.length > 5){
+        console.log("Input length exceeded");
+        return null
+    }
+    for(i = 0; i < input.length; i++){
+        findWordsWithLetter(list, input[i])
+    }
+}
+
+/**
+ * 
+ * @param {*} list 
+ * @param {*} input 
+ */
+function lettersExactMatch(list,input){
+    if(input.length > 5){
+        console.log("Input length exceeded");
+    }
+}
+
 
 // allWords(words) 
 // firstTenWords(words)
@@ -85,7 +113,12 @@ function findWordsWithLetter(list, letter){
 // subsetOfWords(words, 12, 14)
 // sortWords(words)
 // wordsWithQ(words)
-findWordsWithLetter(words,"na")
+// findWordsWithLetter(words,"")
+
+
+// findWordsWithLetter(words,process.argv[2])
+lettersMatch(words, process.argv[2])
+
 
 
 
