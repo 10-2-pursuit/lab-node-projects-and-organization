@@ -7,7 +7,7 @@ const words = require("./words.json")
 */
 function allWords (list) {
     for (word of list){
-        console.log(word)
+        console.log(word);
     }
 }
 /**
@@ -17,7 +17,7 @@ function allWords (list) {
  */
 function firstTenWords (list) {
     for (let i = 0; i < 10; i++) {
-        console.log(list[i])
+        console.log(list[i]);
     }
 }
 
@@ -27,9 +27,10 @@ function firstTenWords (list) {
  */
 function nextTenWords(list) {
     for (let i = 10; i < 20; i++) {
-        console.log(list[i])
+        console.log(list[i]);
     }
 }
+
 /**
  * Logs from the first word to a specified index in the given array.
  * @param {Array} list - An array of all the words
@@ -37,7 +38,7 @@ function nextTenWords(list) {
  */
 function firstXWords(list, end){
     for (let i = 0; i <= end; i++) {
-        console.log(list[i])
+        console.log(list[i]);
     }
 }
 
@@ -49,29 +50,31 @@ function firstXWords(list, end){
  */
 function subsetOfWords(list, start, finish){
     for(let i = start; i < finish; i++){
-        console.log(list[i])
+        console.log(list[i]);
     }
 }
+
 /**
  * Logs all the words, sorted alphabetically.
  * @param {Array} list - Array of all input words
  */
 function sortWords(list){
-    let sortedList = list.sort()
-    allWords(sortedList)
+    let sortedList = list.sort();
+    allWords(sortedList);
 }
+
 /**
  * Logs all words starting with the letter "q" in the given array
  * @param {Array} list - Array of all input words
  */
 function wordsWithQ(list){
-    findWordsWithLetter(list, "q")
+    findWordsWithLetter(list, "q");
 }
 
-/** Logs all words starting with the given letter
- * 
+/** 
+ * Logs all words starting with the given letter
  * @param {Array} list - List of input words
- * @param {"string"} letter 
+ * @param {String} letter - letter to check for
  */
 function findWordsWithLetter(list, letter){
     let filteredList = list
@@ -85,19 +88,22 @@ function findWordsWithLetter(list, letter){
 }
 
 function lettersMatch(list, input){
+    let usedletters = []
     if(input.length > 5){
         console.log("Input length exceeded");
         return null
     }
     for(i = 0; i < input.length; i++){
-        findWordsWithLetter(list, input[i])
+        if(!usedletters.includes()){
+            findWordsWithLetter(list, input[i])
     }
+}
 }
 
 /**
- * 
- * @param {*} list 
- * @param {*} input 
+ * Logs all letters that match the input exactly
+ * @param {Array} list - Array of input words
+ * @param {String} input - String of characters to match
  */
 function lettersExactMatch(list,input){
     if(input.length > 5){
@@ -108,30 +114,17 @@ function lettersExactMatch(list,input){
         if (input[i] == "." || input[i] == "_"){
             continue;
         }
-        filteredList = filteredList.filter(word => word[i] == input[i])
+        filteredList = filteredList.filter(word => word[i] == input[i]);
     }
     if(filteredList.length != 0){
         allWords(filteredList)
     } else {
-        console.log(`No words matching ${input}`)
+        console.log(`No words matching ${input}`);
     } 
     
 }
 
-
-// allWords(words) 
-// firstTenWords(words)
-// nextTenWords(words)
-// firstXWords(words, 1)
-// subsetOfWords(words, 12, 14)
-// sortWords(words)
-// wordsWithQ(words)
-// findWordsWithLetter(words,"")
-
-
-// findWordsWithLetter(words,process.argv[2])
-// lettersMatch(words, process.argv[2])
-lettersExactMatch(words, process.argv[2])
+lettersExactMatch(words, process.argv[2]);
 
 
 
