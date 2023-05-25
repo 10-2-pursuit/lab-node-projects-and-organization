@@ -65,10 +65,12 @@ function sortWords(list){
  * @param {Array} list - Array of all input words
  */
 function wordsWithQ(list){
-    let filteredList = list.filter(word => word[0] == "q")
+    findWordsWithLetter(list, "q")
+}
+function findWordsWithLetter(list, letter){
+    let filteredList = list.filter(word => word[0] == letter)
     allWords(filteredList)
 }
-function findWordsWithLetter(list, letter){}
 
 // allWords(words) 
 // firstTenWords(words)
@@ -76,7 +78,8 @@ function findWordsWithLetter(list, letter){}
 // firstXWords(words, 1)
 // subsetOfWords(words, 12, 14)
 // sortWords(words)
-wordsWithQ(words)
+// wordsWithQ(words)
+// findWordsWithLetter(words,"n")
 
 
 
