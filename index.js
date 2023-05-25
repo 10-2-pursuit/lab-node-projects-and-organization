@@ -67,8 +67,14 @@ function sortWords(list){
 function wordsWithQ(list){
     findWordsWithLetter(list, "q")
 }
+/**
+ * 
+ * @param {Array} list 
+ * @param {"string"} letter 
+ */
 function findWordsWithLetter(list, letter){
-    let filteredList = list.filter(word => word[0] == letter)
+    let filteredList = list
+    .filter(word => word.slice(0,letter.length) == letter)
     allWords(filteredList)
 }
 
@@ -79,7 +85,7 @@ function findWordsWithLetter(list, letter){
 // subsetOfWords(words, 12, 14)
 // sortWords(words)
 // wordsWithQ(words)
-// findWordsWithLetter(words,"n")
+findWordsWithLetter(words,"na")
 
 
 
