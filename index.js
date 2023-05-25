@@ -30,8 +30,21 @@ function nextTenWords(list) {
         console.log(list[i])
     }
 }
+/**
+ * Logs from the first word to a specified index in the given array.
+ * @param {Array} list - An array of all the words
+ * @param {Number} end - The console will log up to this index.
+ */
+function firstXWords(list, end){
+    for (i = 0; i <= end; i++) {
+        console.log(list[i])
+    }
+}
 
-function firstXWords(list){}
+/**
+ * 
+ * @param {*} list 
+ */
 function subsetOfWords(list){}
 function sortWords(list){}
 function wordsWithQ(list){}
@@ -40,6 +53,7 @@ function findWordsWithLetter(list, letter){}
 // allWords(words) 
 // firstTenWords(words)
 // nextTenWords(words)
+// firstXWords(words, 1)
 
 
 
