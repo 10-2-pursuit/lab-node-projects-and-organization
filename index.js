@@ -57,10 +57,17 @@ function subsetOfWords(list, start, finish){
  * @param {Array} list - Array of all input words
  */
 function sortWords(list){
-    sortedList = list.sort()
+    let sortedList = list.sort()
     allWords(sortedList)
 }
-function wordsWithQ(list){}
+/**
+ * Logs all words starting with the letter "q" in the given array
+ * @param {Array} list - Array of all input words
+ */
+function wordsWithQ(list){
+    let filteredList = list.filter(word => word[0] == "q")
+    allWords(filteredList)
+}
 function findWordsWithLetter(list, letter){}
 
 // allWords(words) 
@@ -68,7 +75,8 @@ function findWordsWithLetter(list, letter){}
 // nextTenWords(words)
 // firstXWords(words, 1)
 // subsetOfWords(words, 12, 14)
-sortWords(words)
+// sortWords(words)
+wordsWithQ(words)
 
 
 
