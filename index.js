@@ -102,7 +102,20 @@ function lettersMatch(list, input){
 function lettersExactMatch(list,input){
     if(input.length > 5){
         console.log("Input length exceeded");
+    } 
+    let filteredList = list;
+    for(let i = 0; i < input.length; i++){
+        if (input[i] == "." || input[i] == "_"){
+            continue;
+        }
+        filteredList = filteredList.filter(word => word[i] == input[i])
     }
+    if(filteredList.length != 0){
+        allWords(filteredList)
+    } else {
+        console.log(`No words matching ${input}`)
+    } 
+    
 }
 
 
@@ -117,7 +130,8 @@ function lettersExactMatch(list,input){
 
 
 // findWordsWithLetter(words,process.argv[2])
-lettersMatch(words, process.argv[2])
+// lettersMatch(words, process.argv[2])
+lettersExactMatch(words, process.argv[2])
 
 
 
