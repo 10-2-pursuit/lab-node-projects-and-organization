@@ -1,4 +1,4 @@
-const words = require("./words.json")
+const words = require("./words.json");
 //console.log(words);
 
 /*function allWords() {
@@ -8,20 +8,33 @@ const words = require("./words.json")
 };
 allWords();*/
 
-function firstTenWords(words) { 
+/*function firstTenWords(words) { 
     for (let i = 0; i < 10; i++) {
         console.log(words[i]);
     }
 };
-firstTenWords(words);
+firstTenWords(words);*/
 
-function nextTenWords() { };
-function firstXWords() { };
-function subsetOfWords(params) {
-    
+/*function nextTenWords(words) { 
+    for (let i = 10; i < 20; i++) {
+        console.log(words[i]);
+    }
 };
+nextTenWords(words);*/
 
-function sortWords(params) {
-    
-};
+function firstXWords(words, X) {
+  for (let i = 0; i < X; i++) {
+    console.log(words[i]);
+  }
+}
+//firstXWords(words, process.argv[2]);
 
+function subsetOfWords(words, xSubSet, ySubSet) {
+  for (xSubSet; xSubSet < ySubSet; xSubSet++) {
+    console.log(words[xSubSet]);
+  }
+}
+subsetOfWords(words, Number(process.argv[2]), Number(process.argv[3]));
+console.log(process.argv);
+
+function sortWords(params) {}
