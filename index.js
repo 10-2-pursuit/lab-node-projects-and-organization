@@ -46,18 +46,18 @@ function wordsWithQ(words) {
 //console.log(wordsWithQ(words))
 
 
-function findWordsWithLetter(words, letter) {
+function findWordsWithLetter(words) {
     let foundWordsByLetter = [];
 
     for (let word of words) {
         let splitWord = word.split("");
 
         for (let i = 0; i <= splitWord.length; i++) {
-            if(splitWord[i] == letter) {
+            if(splitWord[i] == process.argv[2]) {
                 foundWordsByLetter.push(word);
             }
         }
     }
     return foundWordsByLetter;
 }
-console.log(findWordsWithLetter(words, "t"))
+console.log(findWordsWithLetter(words))
