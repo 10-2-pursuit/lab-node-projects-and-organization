@@ -1,5 +1,16 @@
 const words = require("./words.json")
 
+
+function exactLetters(list, letter){
+    let filteredList = list
+    .filter(word => word.slice(0,letter.length) == letter)
+    if(filteredList.length != 0){
+        allWords(filteredList)
+    } else {
+        console.log(`No words matching ${letter}`)
+    } 
+}
+
 /** 
  * Logs all of the words in the given array
  * @param {Array} list - An array of all the words
@@ -64,7 +75,7 @@ function sortWords(list){
 }
 
 /**
- * Logs all words starting with the letter "q" in the given array
+ * Logs all words including the letter "q" in the given array
  * @param {Array} list - Array of all input words
  */
 function wordsWithQ(list){
@@ -72,13 +83,13 @@ function wordsWithQ(list){
 }
 
 /** 
- * Logs all words starting with the given letter
+ * Logs all words including the given letter
  * @param {Array} list - List of input words
  * @param {String} letter - letter to check for
  */
 function findWordsWithLetter(list, letter){
     let filteredList = list
-    .filter(word => word.slice(0,letter.length) == letter)
+    .filter(word => word.includes(letter))
     if(filteredList.length != 0){
         allWords(filteredList)
     } else {
@@ -86,6 +97,8 @@ function findWordsWithLetter(list, letter){
     } 
     
 }
+
+
 
 function lettersMatch(list, input){
     let usedletters = []
@@ -95,9 +108,9 @@ function lettersMatch(list, input){
     }
     for(i = 0; i < input.length; i++){
         if(!usedletters.includes()){
-            findWordsWithLetter(list, input[i])
+            exactLetters(list, input[i])
+        }
     }
-}
 }
 
 /**
@@ -125,6 +138,7 @@ function lettersExactMatch(list,input){
 }
 
 lettersExactMatch(words, process.argv[2]);
+
 
 
 
