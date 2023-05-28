@@ -1,26 +1,26 @@
 const words = require("./words.json");
 //console.log(words);
 
-/*function allWords() {
+function allWords() {
     for (const word of words) {
         console.log(word);
     }
 };
-allWords();*/
+allWords();
 
-/*function firstTenWords(words) { 
+function firstTenWords(words) { 
     for (let i = 0; i < 10; i++) {
         console.log(words[i]);
     }
 };
-firstTenWords(words);*/
+firstTenWords(words);
 
-/*function nextTenWords(words) { 
+function nextTenWords(words) { 
     for (let i = 10; i < 20; i++) {
         console.log(words[i]);
     }
 };
-nextTenWords(words);*/
+nextTenWords(words);
 
 function firstXWords(words, X) {
   for (let i = 0; i < X; i++) {
