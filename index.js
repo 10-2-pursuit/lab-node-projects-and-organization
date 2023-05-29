@@ -5,11 +5,13 @@ function exactLetters(list, letter){
     let filteredList = list
     .filter(word => word.slice(0,letter.length) == letter)
     if(filteredList.length != 0){
-        allWords(filteredList)
+        return filteredList
     } else {
         console.log(`No words matching ${letter}`)
     } 
 }
+
+
 
 /** 
  * Logs all of the words in the given array
@@ -79,7 +81,7 @@ function sortWords(list){
  * @param {Array} list - Array of all input words
  */
 function wordsWithQ(list){
-    findWordsWithLetter(list, "q");
+    return findWordsWithLetter(list, "q");
 }
 
 /** 
@@ -91,9 +93,9 @@ function findWordsWithLetter(list, letter){
     let filteredList = list
     .filter(word => word.includes(letter))
     if(filteredList.length != 0){
-        allWords(filteredList)
+        return filteredList
     } else {
-        console.log(`No words matching ${letter}`)
+        return `No words matching ${letter}`
     } 
     
 }
@@ -102,15 +104,19 @@ function findWordsWithLetter(list, letter){
 
 function lettersMatch(list, input){
     let usedletters = []
+    let foundWords = []
     if(input.length > 5){
-        console.log("Input length exceeded");
-        return null
+        return "Input length exceeded"
     }
     for(i = 0; i < input.length; i++){
+        if(foundWords.length == 0){
+            foundWords = findWordsWithLetter(list, input[i])
+        }
         if(!usedletters.includes()){
-            exactLetters(list, input[i])
+            foundWords = findWordsWithLetter(foundWords, input[i])
         }
     }
+    return foundWords
 }
 
 /**
@@ -120,7 +126,7 @@ function lettersMatch(list, input){
  */
 function lettersExactMatch(list,input){
     if(input.length > 5){
-        console.log("Input length exceeded");
+       return "Input length exceeded";
     } 
     let filteredList = list;
     for(let i = 0; i < input.length; i++){
@@ -130,14 +136,16 @@ function lettersExactMatch(list,input){
         filteredList = filteredList.filter(word => word[i] == input[i]);
     }
     if(filteredList.length != 0){
-        allWords(filteredList)
+        return  allWords(filteredList)
     } else {
-        console.log(`No words matching ${input}`);
+        return `No words matching ${input}`
     } 
     
 }
 
-lettersExactMatch(words, process.argv[2]);
+// console.log(findWordsWithLetter(words, 'q'))
+// console.log(exactLetters(words, process.argv[2]))
+console.log(lettersMatch(words, process.argv[2]));
 
 
 
