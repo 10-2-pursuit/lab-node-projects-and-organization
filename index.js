@@ -111,11 +111,22 @@ function lettersMatch(list, input){
     for(i = 0; i < input.length; i++){
         if(foundWords.length == 0){
             foundWords = findWordsWithLetter(list, input[i])
-        }
-        if(!usedletters.includes()){
+            usedletters.push(input[i])
+        } else if(!usedletters.includes(input[i])){
             foundWords = findWordsWithLetter(foundWords, input[i])
+            usedletters.push(input[i])
+        } else {
+            for (let j = 0; j < foundWords.length ; j++){
+                let wordSplit = foundWords[j].split('')
+                if (wordSplit.indexOf(input[i]) == wordSplit.lastIndexOf(input[i])) {     
+                    foundWords.splice(j,1);
+                    j--
+                }
+            }
         }
+        
     }
+    console.log(usedletters)
     return foundWords
 }
 
