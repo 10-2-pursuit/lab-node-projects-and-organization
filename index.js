@@ -42,3 +42,14 @@ function findWordsWithLetter(words, letters) {
 console.log(findWordsWithLetter(words, process.argv[2]));
 
 
+module.exports = {
+    _allWords,
+    _firstTenWords,
+    _nextTenWords,
+    _firstXWords,
+    _subsetOfWords,
+    _sortWords,
+    wordsWithQ,
+    findWordsWithLetter
+}
+
