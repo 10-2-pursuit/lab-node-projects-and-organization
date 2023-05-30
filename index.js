@@ -58,8 +58,6 @@ function logswordsWithQ(words) {
 }
 logswordsWithQ(words);
 
-let letter = '';
-
 function findWordsWithLetter(words, letter) {
     wordsWithLetter = [];
     for (let i = 0; i < words.length; i++) {
@@ -74,5 +72,17 @@ if (inputLetter) {
     const wordsWithLetter = findWordsWithLetter(words, inputLetter)
     console.log(wordsWithLetter)
 } else {
-    console.log('Please provide a lettter in the command')
+    console.log('Please provide a letter in the command')
 }
+
+
+module.exports = {
+    allWords,
+    logsFirstTenWords,
+    logsNextTenWords,
+    logsSortedWords,
+    logsSubsetOfWords,
+    logsfirstXWords,
+    logswordsWithQ,
+    findWordsWithLetter,
+};
