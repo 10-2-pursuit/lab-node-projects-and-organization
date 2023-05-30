@@ -36,7 +36,7 @@ function wordsWithQ(words) {
     return words.filter(word => word.includes("q"));
 }
 
-function findWordsWithLetter(words, letters) {
+function findWordsWithLetter(words) {
     return words.filter(word => word.includes(process.argv[2]))
 }
 console.log(findWordsWithLetter(words, process.argv[2]));
