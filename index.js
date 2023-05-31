@@ -40,12 +40,3 @@ let letter = process.argv[2];
 function findWordsWithLetter(words, letter) {
   return console.log(words.filter((word) => word.charAt(0) === letter));
 }
-
-const [bin, , ...args] = process.argv;
-const charSearch = /a-z/;
-
-const letterMatch = console.log(words.filter(
-  (word) => charSearch == word.includes(process.argv)
-));
-
-letterMatch
